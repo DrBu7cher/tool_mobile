@@ -9,8 +9,8 @@ environment:
 
 dependencies:
   tool_base:
-    # git: https://github.com/DrBu7cher/tool_base.git
-    path: /home/jbadstuebner/Dokumente/git/github.com/DrBu7cher/tool_base/main
+    git: https://github.com/DrBu7cher/tool_base.git
+    # path: /home/jbadstuebner/Dokumente/git/github.com/DrBu7cher/tool_base/main
 
 dev_dependencies:
   mockito: ^5.4.0
