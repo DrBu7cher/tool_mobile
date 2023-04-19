@@ -186,12 +186,12 @@ class AndroidNdk {
       }
 
       final String platformsDir = fs.path.join(ndkDirectory, 'platforms');
-      final List<int> versions = fs
+      final List<int> versions = List<int>.from(fs
           .directory(platformsDir)
           .listSync()
           .map(toPlatformVersion)
           .where((int? version) => version != null)
-          .toList(growable: false) as List<int>;
+          .toList(growable: false));
       versions.sort();
 
       final int? suitableVersion = versions
@@ -473,7 +473,7 @@ class AndroidSdk {
     final Directory buildToolsDir =
         fs.directory(fs.path.join(directory, 'build-tools'));
     if (buildToolsDir.existsSync()) {
-      buildTools = buildToolsDir
+      buildTools = List<Version>.from(buildToolsDir
           .listSync()
           .map((FileSystemEntity entity) {
             try {
@@ -483,7 +483,7 @@ class AndroidSdk {
             }
           })
           .where((Version? version) => version != null)
-          .toList() as List<Version>;
+          .toList());
     }
 
     // Match up platforms with the best corresponding build-tools.
