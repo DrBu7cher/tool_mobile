@@ -18,7 +18,7 @@ import 'package:tool_base/tool_base.dart';
 //import '../globals.dart';
 //import 'android_studio.dart' as android_studio;
 
-AndroidSdk get androidSdk => context.get<AndroidSdk>();
+AndroidSdk get androidSdk => context.get<AndroidSdk>()!;
 
 const String kAndroidHome = 'ANDROID_HOME';
 const String kAndroidSdkRoot = 'ANDROID_SDK_ROOT';
